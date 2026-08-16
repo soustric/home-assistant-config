@@ -2,8 +2,6 @@ homeassistant: !include home-assistant.yaml
 default_config:
 frontend:
   themes: !include_dir_merge_named themes
-#tts: !include tts.yaml
-#http: !include http.yaml
 my:
 template: !include_dir_merge_list templates/
 sensor: !include_dir_merge_list sensors/
