@@ -1,0 +1,15 @@
+  name: Maison
+  latitude: 43.82132
+  longitude: 1.31795
+  elevation: 209
+  unit_system: metric
+  temperature_unit: C
+  currency: EUR
+  country: FR
+  time_zone: "Europe/Paris"
+  external_url: "https://ha.082170.xyz"
+  internal_url: "http://192.168.1.12:8123"
+  auth_mfa_modules:
+    - type: totp
+  media_dirs:
+    media: /media

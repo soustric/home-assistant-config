@@ -1,0 +1,17 @@
+{
+  "domain": "hikvision_axpro",
+  "name": "hikvision_axpro",
+  "codeowners": [
+    "@gunkutzeybek",
+    "@petrleocompel"
+  ],
+  "config_flow": true,
+  "dependencies": ["http"],
+  "documentation": "https://github.com/petrleocompel/hikaxpro_hacs",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/petrleocompel/hikaxpro_hacs/issues",
+  "requirements": [
+    "hikaxpro==2.3.0"
+  ],
+  "version": "3.4.0"
+}

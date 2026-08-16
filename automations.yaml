@@ -1,0 +1,412 @@
+- id: '1670568240938'
+  alias: Sécurité - Garage - Détecteur de fumée - Notification alarme fumée
+  description: Notification détecteur de fumée du garage
+  triggers:
+  - type: smoke
+    device_id: ba7a219b091b69b470f386d78630cf8d
+    entity_id: binary_sensor.detecteur_de_fumee_smoke_detected
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 1cad52a98187142ef5ef9677c443af35
+    domain: mobile_app
+    type: notify
+    message: Alarme de détection de fumée dans le garage
+    title: Détecteur de fumée
+  mode: single
+- id: '1672157821434'
+  alias: Energie - Maison - ZLinky - Informations chaque minute
+  description: ZLinky - Mise à jour des informations chaque minute
+  triggers:
+  - hours: '*'
+    minutes: /1
+    seconds: '0'
+    trigger: time_pattern
+  conditions: []
+  actions:
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 1794
+      attribute: 0
+      state_id: sensor.template_lixee_zlinky_tic_metering_tarif_base
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 1295
+      state_id: sensor.template_lixee_zlinky_tic_metering_SINST1
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2319
+      state_id: sensor.template_lixee_zlinky_tic_metering_SINST2
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2575
+      state_id: sensor.template_lixee_zlinky_tic_metering_SINST3
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 774
+      state_id: sensor.template_lixee_zlinky_tic_metering_SINSTS
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 1288
+      state_id: sensor.template_lixee_zlinky_tic_metering_IRMS1
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2312
+      state_id: sensor.template_lixee_zlinky_tic_metering_IRMS2
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2568
+      state_id: sensor.template_lixee_zlinky_tic_metering_IRMS3
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 1285
+      state_id: sensor.template_lixee_zlinky_tic_metering_URMS1
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2309
+      state_id: sensor.template_lixee_zlinky_tic_metering_URMS2
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2565
+      state_id: sensor.template_lixee_zlinky_tic_metering_URMS3
+      allow_create: false
+      mode: single
+    action: zha_toolkit.execute
+- id: '1703387048784'
+  alias: Sécurité - Garage - Détecteur de fumée - Notification surchauffe
+  description: Notification détecteur de surchauffe du garage
+  triggers:
+  - type: hot
+    device_id: ba7a219b091b69b470f386d78630cf8d
+    entity_id: binary_sensor.smoke_detector_overheat_detected
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 1cad52a98187142ef5ef9677c443af35
+    domain: mobile_app
+    type: notify
+    message: Le détecteur de fumée dans le garage est en surchauffe !
+    title: Détecteur de fumée
+  mode: single
+- id: '1703387329634'
+  alias: Sécurité - Garage - Détecteur de fumée - Notification faible batterie
+  description: Notification batterie faible du détecteur de fumée du garage
+  triggers:
+  - type: bat_low
+    device_id: ba7a219b091b69b470f386d78630cf8d
+    entity_id: binary_sensor.smoke_detector_low_battery_level
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 1cad52a98187142ef5ef9677c443af35
+    domain: mobile_app
+    type: notify
+    message: La batterie du détecteur de fumée du garage est faible
+    title: Détecteur de fumée
+  mode: single
+- id: '1715761046992'
+  alias: Energie - Maison - ZLinky - Informations journalières
+  description: ZLinky - Mise à jour des informations journalières
+  triggers:
+  - at: '23:58:30'
+    trigger: time
+  conditions: []
+  actions:
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 1293
+      state_id: sensor.template_lixee_zlinky_tic_metering_SMAXN1
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2317
+      state_id: sensor.template_lixee_zlinky_tic_metering_SMAXN2
+      allow_create: false
+    action: zha_toolkit.execute
+  - data:
+      command: attr_read
+      ieee: 00:15:8d:00:05:d2:5e:c9
+      cluster: 2820
+      attribute: 2573
+      state_id: sensor.template_lixee_zlinky_tic_metering_SMAXN3
+      allow_create: false
+    action: zha_toolkit.execute
+  mode: single
+- id: '1739623126099'
+  alias: Auto - Maison - Poubelles - Rappel ordures ménagères
+  description: ''
+  use_blueprint:
+    path: Blackshome/calendar-notifications-and-actions.yaml
+    input:
+      calendar: calendar.ordures_menageres
+      start_notify_device:
+      - 1cad52a98187142ef5ef9677c443af35
+      start_notify_data:
+      - high_priority
+      - sticky
+      start_calendar_offset:
+        hours: -13
+        minutes: 0
+        seconds: 0
+        days: 0
+      include_calendar_trigger: disable_key_word
+      include_start_notify: enable_start_notify_options
+      include_start_action_buttons:
+      - enable_start_action_button_1
+      start_action_button_1: Sortir
+      start_action_button_confirmation_title: Ordures ménagères
+      start_action_button_confirmation_message: La poubelle d'ordures ménagères a
+        été sortie
+- id: '1739623186728'
+  alias: Auto - Maison - Poubelles - Rappel tri sélectif
+  description: ''
+  use_blueprint:
+    path: Blackshome/calendar-notifications-and-actions.yaml
+    input:
+      calendar: calendar.tri_selectif
+      start_notify_device:
+      - 1cad52a98187142ef5ef9677c443af35
+      start_calendar_offset:
+        hours: -13
+        minutes: 0
+        seconds: 0
+        days: 0
+      start_notify_data:
+      - high_priority
+      - sticky
+      include_start_notify: enable_start_notify_options
+      include_start_action_buttons:
+      - enable_start_action_button_1
+      start_action_button_1: Sortir
+      include_start_action_button_confirmation: enable_start_action_button_confirmation
+      start_action_button_confirmation_title: Tri sélectif (vert)
+      start_action_button_confirmation_message: La poubelle de tri sélectif a été
+        sortie
+- id: '1741467261432'
+  alias: 'Energie - Garage - Onduleur - Notification passage sur batterie '
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.eaton3s700_code_d_etat
+    from: OL
+    to: OB
+  conditions: []
+  actions:
+  - device_id: 1cad52a98187142ef5ef9677c443af35
+    domain: mobile_app
+    type: notify
+    message: 'L''onduleur passe sur batterie '
+    title: Coupure de courant
+  mode: single
+- id: '1751835837105'
+  alias: Sécurité - Maison - Eufy - Mode Nuit à 22h
+  description: Déclenche le mode Nuit de l'alarme Eufy tous les jours à 22h
+  triggers:
+  - at: '22:00:00'
+    trigger: time
+  conditions:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: select.homebase_3_guard_mode
+      state: Custom 1
+  actions:
+  - target:
+      entity_id: alarm_control_panel.homebase_3
+    action: alarm_control_panel.alarm_arm_custom_bypass
+    data: {}
+  mode: single
+- id: '1753120892176'
+  alias: Sécurité - Maison - Eufy - Mode Nuit
+  description: Synchronise le mode Nuit de l'alarme Eufy au mode Présent de l'alarme
+    Ax-Pro
+  triggers:
+  - entity_id:
+    - sensor.homebase_3_current_mode
+    trigger: state
+    to: Custom 1
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 844d42cefc6516ef36c01c9e5f913ac5
+      domain: alarm_control_panel
+      entity_id: 68234c9716009dd05b5f27f5f69ab652
+      type: is_armed_home
+  actions:
+  - action: alarm_control_panel.alarm_arm_home
+    target:
+      entity_id:
+      - alarm_control_panel.ax_pro
+    data:
+      code: '8788'
+  mode: single
+- id: '1753121432998'
+  alias: Sécurité - Maison - Eufy - Mode Maison
+  description: Synchronise le mode Présent de l'alarme Eufy au mode Désactivé de l'alarme
+    Ax-Pro
+  triggers:
+  - entity_id:
+    - sensor.homebase_3_current_mode
+    to: Home
+    trigger: state
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 844d42cefc6516ef36c01c9e5f913ac5
+      domain: alarm_control_panel
+      entity_id: 68234c9716009dd05b5f27f5f69ab652
+      type: is_disarmed
+  actions:
+  - action: alarm_control_panel.alarm_disarm
+    target:
+      entity_id:
+      - alarm_control_panel.ax_pro
+    data:
+      code: '8788'
+  mode: single
+- id: '1753515950762'
+  alias: 'Sécurité - Maison - Eufy - Mode Absent '
+  description: Synchronise le mode Absent de l'alarme Eufy au mode Absent de l'alarme
+    Ax-Pro
+  triggers:
+  - entity_id:
+    - sensor.homebase_3_current_mode
+    trigger: state
+    to: Away
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 844d42cefc6516ef36c01c9e5f913ac5
+      domain: alarm_control_panel
+      entity_id: 68234c9716009dd05b5f27f5f69ab652
+      type: is_armed_away
+  actions:
+  - action: alarm_control_panel.alarm_arm_away
+    target:
+      entity_id:
+      - alarm_control_panel.ax_pro
+    data:
+      code: '8788'
+  mode: single
+- id: '1754579001331'
+  alias: Sécurité - Maison - Hikvision - Mode Absent
+  description: ''
+  triggers:
+  - entity_id:
+    - alarm_control_panel.ax_pro
+    trigger: state
+    to: armed_away
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 343dc92a88c2ae34060bfaa67b0c374e
+      domain: alarm_control_panel
+      entity_id: 52a2002d691961cfeb57b9fdb66cf52e
+      type: is_armed_away
+  actions:
+  - action: alarm_control_panel.alarm_arm_away
+    target:
+      entity_id:
+      - alarm_control_panel.homebase_3
+    data: {}
+  mode: single
+- id: '1754579699470'
+  alias: Sécurite - Maison - Hikvision - Mode Maison
+  description: ''
+  triggers:
+  - entity_id:
+    - alarm_control_panel.ax_pro
+    trigger: state
+    to: disarmed
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 343dc92a88c2ae34060bfaa67b0c374e
+      domain: alarm_control_panel
+      entity_id: 52a2002d691961cfeb57b9fdb66cf52e
+      type: is_armed_home
+  actions:
+  - action: alarm_control_panel.alarm_arm_home
+    target:
+      entity_id:
+      - alarm_control_panel.homebase_3
+    data: {}
+  mode: single
+- id: '1754580218421'
+  alias: Sécurité - Maison - Hikvision - Mode Nuit
+  description: Synchronise le mode Présent de l'alarme Ax Pro au mode Nuit de l'alarme
+    Eufy
+  triggers:
+  - entity_id:
+    - alarm_control_panel.ax_pro
+    trigger: state
+    to: armed_home
+  conditions:
+  - condition: not
+    conditions:
+    - condition: device
+      device_id: 343dc92a88c2ae34060bfaa67b0c374e
+      domain: alarm_control_panel
+      entity_id: 52a2002d691961cfeb57b9fdb66cf52e
+      type: is_armed_custom_bypass
+  actions:
+  - action: alarm_control_panel.alarm_arm_custom_bypass
+    target:
+      entity_id:
+      - alarm_control_panel.homebase_3
+    data: {}
+  mode: single

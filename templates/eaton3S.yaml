@@ -1,0 +1,7 @@
+  - sensor:
+    - name: "Eaton3S700 Energy Consumption"
+      unit_of_measurement: "kWh"
+      state_class: total_increasing
+      device_class: energy
+      state: >
+        {{ (states('sensor.eaton3s700_current_real_power') | float / 1000) | round(6) }}

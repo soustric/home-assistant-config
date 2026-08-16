@@ -1,0 +1,32 @@
+  - sensor:
+    - name: "Ordures menageres"
+      unique_id: "ordures_menageres"
+      icon: mdi-trash-can-outline
+      state: >
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.ordures_menageres', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% if delta.days == 0 %}
+          Aujourd'hui
+        {% elif delta.days == 1 %}
+          Demain
+        {% else %}
+          Dans {{ delta.days }} jours
+        {% endif %}
+  - sensor:
+    - name: "Tri sélectif"
+      unique_id: "tri_selectif"
+      icon: mdi-recycle
+      state: >
+        {% set t = now() %}
+        {% set midnight = today_at() %}
+        {% set event = state_attr('calendar.tri_selectif', 'start_time') | as_datetime | as_local %}
+        {% set delta = event - midnight %}
+        {% if delta.days == 0 %}
+          Aujourd'hui
+        {% elif delta.days == 1 %}
+          Demain
+        {% else %}
+          Dans {{ delta.days }} jours
+        {% endif %}

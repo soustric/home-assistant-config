@@ -1,0 +1,38 @@
+# --- Secrets et identifiants ---
+secrets.yaml
+.storage/
+.cloud/
+*.key
+*.pem
+*.crt
+*.pub
+ip_bans.yaml
+.uuid
+
+# --- Bases de donnees et journaux ---
+*.db
+*.db-*
+*.log
+*.log.*
+home-assistant.log*
+OZW_Log.txt
+
+# --- Volumineux ou ephemere ---
+backups/
+tts/
+deps/
+media/
+image/
+zigpy_ota/
+__pycache__/
+*.pyc
+
+# --- Sauvegardes locales ---
+*.bak
+*.bak-*
+configuration.yaml.bak*
+
+# --- Ajouts ---
+.cache/
+go2rtc*
+home-assistant-*.json

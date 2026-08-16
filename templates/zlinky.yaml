@@ -1,0 +1,143 @@
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_tarif_base
+      name: "Energie active soutirée totale"
+      unit_of_measurement: "Wh"
+      device_class: energy
+      state_class: total_increasing
+      state: unavailable
+# Energie Active Soutirée Totale (0x702,0x0000)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_EAST
+      name: "Energie active soutirée totale"
+      unit_of_measurement: "Wh"
+      device_class: energy
+      state_class: total_increasing
+      state: unavailable
+# Energie Reactive Q1 Total ERQ1 (0xB04,0x0305)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_ERQ1
+      name: "Energie réactive Q1 total"
+      unit_of_measurement: "Wh"
+      device_class: energy
+      state_class: total_increasing
+      state: unavailable
+# Puissance Apparente Instantanée Soutirée SINSTS (0xB04,0x0306)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SINSTS
+      name: "Puissance apparente instantanée soutirée"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Instantanée Soutirée Phase 1 SINTS1 (0xB04,0x050F)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SINST1
+      name: "Puissance apparente instantanée phase 1"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Instantanée Soutirée Phase 2 SINTS2 (0xB04,0x090F)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SINST2
+      name: "Puissance apparente instantanée phase 2"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Instantanée Soutirée Phase 3 SINTS3 (0xB04,0x0A0F)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SINST3
+      name: "Puissance apparente instantanée phase 3"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Maximale Soutirée n Phase 1 SMAXN1 (0xB04,0x050D)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SMAXN1
+      name: "Puissance apparente maximale soutirée n phase 1"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Maximale Soutirée n Phase 2 SMAXN2 (0xB04,0x090D)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SMAXN2
+      name: "Puissance apparente maximale soutirée n phase 2"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Puissance Apparente Maximale Soutirée n Phase 3 SMAXN3 (0xB04,0x0A0D)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_SMAXN3
+      name: "Puissance apparente maximale soutirée n phase 3"
+      unit_of_measurement: "VA"
+      device_class: apparent_power
+      state_class: measurement
+      state: unavailable
+# Courant Efficace Phase 1 IRMS1 (0xB04,0x0508)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_IRMS1
+      name: "Courant efficace phase 1"
+      unit_of_measurement: "A"
+      device_class: current
+      state_class: measurement
+      state: unavailable
+# Courant Efficace Phase 2 IRMS2 (0xB04,0x0908)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_IRMS2
+      name: "Courant efficace phase 2"
+      unit_of_measurement: "A"
+      device_class: current
+      state_class: measurement
+      state: unavailable
+# Courant Efficace Phase 3 IRMS3 (0xB04,0x0A08)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_IRMS3
+      name: "Courant efficace phase 3"
+      unit_of_measurement: "A"
+      device_class: current
+      state_class: measurement
+      state: unavailable
+# Tension Efficace Phase 1 URMS1 (0xB04,0x0505)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_URMS1
+      name: "Tension efficace phase 1"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+      state: unavailable
+# Tension Efficace Phase 2 URMS2 (0xB04,0x0905)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_URMS2
+      name: "Tension efficace phase 2"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+      state: unavailable
+# Tension Efficace Phase 3 URMS3 (0xB04,0x0A05)
+  - sensor:
+    - unique_id: lixee_zlinky_tic_metering_URMS3
+      name: "Tension efficace phase 3"
+      unit_of_measurement: "V"
+      device_class: voltage
+      state_class: measurement
+      state: unavailable
+# Energie Active Injectée Totale EAIT (0x702,0x0001)
+#- sensor:
+#    - unique_id: lixee_zlinky_tic_metering_EAIT
+#      name: "Energie active injectée totale"
+#      unit_of_measurement: "Wh"
+#      device_class: energy
+#      state_class: total_increasing
+#      state: unavailable
+# Puissance Apparente Instantanée Injectée SINSTI (0xFF66,0x0207)
+#- sensor:
+#    - unique_id: lixee_zlinky_tic_metering_SINSTI
+#      name: "Puissance apparente instantanée injectée"
+#      unit_of_measurement: "VA"
+#      device_class: apparent_power
+#      state_class: measurement
+#      state: unavailable

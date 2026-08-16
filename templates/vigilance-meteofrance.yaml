@@ -1,0 +1,54 @@
+  - sensor:
+    - name: "Vigilance vent violent"
+      unique_id: "vigilance_vent_violent"
+      icon: mdi:weather-windy
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Vent violent') }}
+  - sensor:
+    - name: "Vigilance pluie inondation"
+      unique_id: "vigilance_pluie_inondation"
+      icon: mdi:weather-pouring
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Pluie-inondation') }}
+  - sensor:
+    - name: "Vigilance orages"
+      unique_id: "vigilance_orages"
+      icon: mdi:weather-lightning
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Orages') }}
+  - sensor:
+    - name: "Vigilance inondation"
+      unique_id: "vigilance_inondation"
+      icon: mdi:home-flood
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Inondation') }}
+  - sensor:
+    - name: "Vigilance neige verglas"
+      unique_id: "vigilance_neige_verglas"
+      icon: mdi:weather-snowy-heavy
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Neige-verglas') }}
+  - sensor:
+    - name: "Vigilance canicule"
+      unique_id: "vigilance_canicule"
+      icon: mdi:weather-sunny-alert
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Canicule') }}
+  - sensor:
+    - name: "Vigilance grand froid"
+      unique_id: "vigilance_grand_froid"
+      icon: mdi:snowflake
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Grand-froid') }}
+  - sensor:
+    - name: "Vigilance avalanches"
+      unique_id: "vigilance_avalanches"
+      icon: mdi:image-filter-hdr
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Avalanches') }}
+  - sensor:
+    - name: "Vigilance vagues submersion"
+      unique_id: "vigilance_vagues_submersion"
+      icon: mdi:waves
+      state: >
+        {{ state_attr('sensor.82_weather_alert','Vagues-submersion') }}
