@@ -36,3 +36,6 @@ configuration.yaml.bak*
 .cache/
 go2rtc*
 home-assistant-*.json
+
+# --- Cles SSH ---
+.ssh/
