@@ -18,7 +18,7 @@ zha_toolkit:
 zha:
   zigpy_config:
     ota:
-#       otau_directory: /config/zigpy_ota
+      #       otau_directory: /config/zigpy_ota
       extra_providers:
         - type: zigpy_remote
           url: https://github.com/Koenkk/zigbee-OTA/blob/master/index.json
@@ -28,15 +28,7 @@ zha:
 #            files. Some OTA updates can be mistakenly applied to the wrong
 #            device, breaking it. I am consciously using this at my own risk.
 #          path: /config/zigpy_ota
-#switch:
-#  - platform: wake_on_lan
-#    name: "Console"
-#    mac: D8:F8:83:36:0B:73
-#    turn_off:
-#      action: shell_command.turn_off_console
-#shell_command:
-#  turn_off_console: "ssh root@192.168.1.74 pm-suspend"
-
+#
 # recorder - ajoute le 2026-08-16
 recorder:
   purge_keep_days: 10
@@ -47,6 +39,3 @@ recorder:
       - sensor.*_rssi
       - sensor.*_uptime
       - sensor.*_last_seen
-    entities:
-      - sensor.date
-      - sensor.time

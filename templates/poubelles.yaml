@@ -1,7 +1,7 @@
   - sensor:
     - name: "Ordures menageres"
       unique_id: "ordures_menageres"
-      icon: mdi-trash-can-outline
+      icon: mdi:trash-can-outline
       state: >
         {% set t = now() %}
         {% set midnight = today_at() %}
@@ -17,7 +17,7 @@
   - sensor:
     - name: "Tri sélectif"
       unique_id: "tri_selectif"
-      icon: mdi-recycle
+      icon: mdi:recycle
       state: >
         {% set t = now() %}
         {% set midnight = today_at() %}
